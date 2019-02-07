@@ -1,9 +1,16 @@
+import { LOADING, SUCCESS, FAILURE } from "../actions";
+
 const initialState = {
-  test: "this is a test"
+  friends: [],
+  loading: false
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOADING:
+      return { ...state, loading: true };
+    case SUCCESS:
+      return { ...state, loading: false, friends: action.friends };
     default:
       return state;
   }
