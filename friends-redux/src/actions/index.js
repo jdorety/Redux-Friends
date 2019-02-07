@@ -11,5 +11,7 @@ export const fetchData = () => dispatch => {
     .then(response => {
       dispatch({ type: SUCCESS, friends: response.data });
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      dispatch({ type: FAILURE, error: err });
+    });
 };

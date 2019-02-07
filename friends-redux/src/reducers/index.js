@@ -11,6 +11,8 @@ export const reducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case SUCCESS:
       return { ...state, loading: false, friends: action.friends };
+    case FAILURE:
+      return { ...state, loading: false, error: action.error, friends: [] };
     default:
       return state;
   }
