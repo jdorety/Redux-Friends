@@ -5,8 +5,10 @@ import DeleteButton from "./DeleteButton";
 const Friends = props => {
   return (
     <div className="friends-list">
+      {props.error && <h3>{props.error}</h3>}
       {props.loading && <h2>Loading</h2>}
       {props.addLoading && <h2>Adding Friend</h2>}
+      {!props.friends.length && !props.loading && <h3>No friends :(</h3>}
       {props.friends.map(friend => {
         return (
           <div className="friend-card" key={friend.id}>
@@ -25,7 +27,8 @@ const mapStateToProps = state => {
   return {
     friends: state.friends,
     loading: state.loading,
-    addLoading: state.addLoading
+    addLoading: state.addLoading,
+    error: state.error
   };
 };
 
