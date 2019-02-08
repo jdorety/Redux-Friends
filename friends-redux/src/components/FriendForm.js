@@ -18,7 +18,7 @@ class FriendForm extends Component {
 
   render() {
     return (
-      <div className="friends-list">
+      <form className="friends-info">
         <input
           type="text"
           name="name"
@@ -37,7 +37,7 @@ class FriendForm extends Component {
           onChange={this.changeHandler}
           value={this.state.email}
         />
-      </div>
+      </form>
     );
   }
 }
