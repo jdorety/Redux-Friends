@@ -18,7 +18,7 @@ export const fetchData = () => dispatch => {
       dispatch({ type: SUCCESS, friends: response.data });
     })
     .catch(err => {
-      dispatch({ type: FAILURE, error: err });
+      dispatch({ type: FAILURE, error: "Error retrieving friends list" });
     });
 };
 
@@ -30,7 +30,10 @@ export const addFriend = friend => dispatch => {
       dispatch({ type: ADD_SUCCESS, friends: response.data });
     })
     .catch(err => {
-      dispatch({ type: ADD_FAILURE, error: err });
+      dispatch({
+        type: ADD_FAILURE,
+        error: "Error adding friend, try again later."
+      });
     });
 };
 
