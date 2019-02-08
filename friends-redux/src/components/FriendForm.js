@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { addFriend } from "../actions";
 import { connect } from "react-redux";
 
+import "../styles/FriendForm.css";
+
 class FriendForm extends Component {
   constructor() {
     super();
