@@ -21,6 +21,11 @@ class FriendForm extends Component {
   submitHandler = e => {
     e.preventDefault();
     this.props.addFriend({ ...this.state });
+    this.setState({
+      name: "",
+      age: "",
+      email: ""
+    });
   };
 
   render() {
@@ -28,18 +33,21 @@ class FriendForm extends Component {
       <form className="friends-info" onSubmit={this.submitHandler}>
         <input
           type="text"
+          placeholder="Name"
           name="name"
           onChange={this.changeHandler}
           value={this.state.name}
         />
         <input
           type="text"
+          placeholder="Age"
           name="age"
           onChange={this.changeHandler}
           value={this.state.age}
         />
         <input
           type="text"
+          placeholder="E-Mail"
           name="email"
           onChange={this.changeHandler}
           value={this.state.email}

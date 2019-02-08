@@ -5,7 +5,7 @@ const Friends = props => {
   return (
     <div className="friends-list">
       {props.loading && <h2>Loading</h2>}
-
+      {props.addLoading && <h2>Adding Friend</h2>}
       {props.friends.map(friend => {
         return (
           <div className="friend-card" key={friend.id}>
@@ -22,7 +22,8 @@ const Friends = props => {
 const mapStateToProps = state => {
   return {
     friends: state.friends,
-    loading: state.loading
+    loading: state.loading,
+    addLoading: state.addLoading
   };
 };
 
