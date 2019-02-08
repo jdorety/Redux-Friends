@@ -37,6 +37,7 @@ class FriendForm extends Component {
           name="name"
           onChange={this.changeHandler}
           value={this.state.name}
+          required
         />
         <input
           type="text"
@@ -44,6 +45,7 @@ class FriendForm extends Component {
           name="age"
           onChange={this.changeHandler}
           value={this.state.age}
+          required
         />
         <input
           type="text"
@@ -51,6 +53,7 @@ class FriendForm extends Component {
           name="email"
           onChange={this.changeHandler}
           value={this.state.email}
+          required
         />
         <button>Add Friend</button>
       </form>

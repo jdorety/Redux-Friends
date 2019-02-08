@@ -1,0 +1,14 @@
+.friends-list {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid #afd699;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.friend-card {
+  width: 50%;
+  margin-bottom: 20px;
+}
