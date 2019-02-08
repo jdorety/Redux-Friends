@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import DeleteButton from "./DeleteButton";
 
 const Friends = props => {
   return (
@@ -12,6 +13,7 @@ const Friends = props => {
             <h3>{friend.name}</h3>
             <p>Age: {friend.age}</p>
             <p>Email: {friend.email}</p>
+            <DeleteButton who={friend.id} />
           </div>
         );
       })}
