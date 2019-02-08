@@ -30,3 +30,10 @@ export const addFriend = friend => dispatch => {
       dispatch({ type: ADD_FAILURE, error: err });
     });
 };
+
+export const deleteFriend = id => dispatch => {
+  axios
+    .delete(`http://localhost:5000/api/friends/${id}`)
+    .then(response => console.log(response))
+    .catch(err => console.log(err));
+};

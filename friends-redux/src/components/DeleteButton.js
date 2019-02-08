@@ -1,11 +1,18 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteFriend } from "../actions";
 
 const DeleteButton = props => {
   function clickHandler(e) {
-    console.log(props.who);
+    props.deleteFriend(props.who);
   }
 
   return <button onClick={clickHandler}>X</button>;
 };
 
-export default DeleteButton;
+export default connect(
+  null,
+  {
+    deleteFriend
+  }
+)(DeleteButton);
