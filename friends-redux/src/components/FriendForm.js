@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { addFriend } from "../actions";
+import { connect } from "react-redux";
 
 class FriendForm extends Component {
   constructor() {
@@ -16,9 +18,14 @@ class FriendForm extends Component {
     });
   };
 
+  submitHandler = e => {
+    e.preventDefault();
+    this.props.addFriend({ ...this.state });
+  };
+
   render() {
     return (
-      <form className="friends-info">
+      <form className="friends-info" onSubmit={this.submitHandler}>
         <input
           type="text"
           name="name"
@@ -37,9 +44,13 @@ class FriendForm extends Component {
           onChange={this.changeHandler}
           value={this.state.email}
         />
+        <button>Add Friend</button>
       </form>
     );
   }
 }
 
-export default FriendForm;
+export default connect(
+  null,
+  { addFriend }
+)(FriendForm);
