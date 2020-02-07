@@ -1,0 +1,1 @@
+## Redux managed friends list
